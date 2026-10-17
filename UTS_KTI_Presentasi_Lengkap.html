@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UTS Konsep Teknologi Informasi — Analisis & Komparasi 5 Laptop Under 10 Juta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #0ea5e9;
+      --accent: #f59e0b;
+      --success: #10b981;
+      --danger: #ef4444;
+      --dark: #0f172a;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --bg: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* HEADER BANNER */
+    .header-card {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0369a1 100%);
+      color: #ffffff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.2);
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-card::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .badge-kampus {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .header-card h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .header-card p.subtitle {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      max-width: 800px;
+      margin-bottom: 20px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    .meta-item strong {
+      color: #93c5fd;
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 40px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 6px;
+      height: 28px;
+      background: var(--primary);
+      border-radius: 4px;
+    }
+
+    /* LAPTOP SHOWCASE CARDS (HORIZONTAL GRID) */
+    .laptop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .laptop-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .laptop-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .laptop-card.highlight {
+      border: 2px solid var(--primary);
+      position: relative;
+    }
+
+    .badge-champion {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      z-index: 2;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+    }
+
+    .img-container {
+      width: 100%;
+      height: 220px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      position: relative;
+    }
+
+    .img-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .laptop-card:hover .img-container img {
+      transform: scale(1.05);
+    }
+
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-header-info {
+      margin-bottom: 14px;
+    }
+
+    .card-header-info h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .model-tag {
+      display: inline-block;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.75rem;
+      color: var(--primary);
+      background: #eff6ff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    .price-tag {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .specs-list {
+      list-style: none;
+      margin: 14px 0;
+      font-size: 0.85rem;
+      border-top: 1px dashed var(--border);
+      border-bottom: 1px dashed var(--border);
+      padding: 12px 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .specs-list li {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .specs-list li span.label {
+      color: var(--text-muted);
+    }
+
+    .specs-list li span.val {
+      font-weight: 600;
+      color: var(--dark);
+      text-align: right;
+    }
+
+    .feature-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .tag-blue { background: #dbeafe; color: #1e40af; }
+    .tag-green { background: #d1fae5; color: #065f46; }
+    .tag-amber { background: #fef3c7; color: #92400e; }
+    .tag-purple { background: #ede9fe; color: #5b21b6; }
+
+    /* COMPARISON TABLE */
+    .table-container {
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      overflow-x: auto;
+      margin-bottom: 40px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f8fafc;
+      font-weight: 700;
+      color: var(--dark);
+      position: sticky;
+      top: 0;
+    }
+
+    th.param-col {
+      width: 220px;
+      background: #f1f5f9;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background-color: #f8fafc;
+    }
+
+    td.winner {
+      background-color: #f0fdf4 !important;
+      font-weight: 600;
+      color: #166534;
+    }
+
+    /* ACCORDION / DEEP-DIVE CARDS */
+    .deep-card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .deep-card h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .q-box {
+      background: #f8fafc;
+      border-left: 4px solid var(--primary);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 14px 0;
+      font-size: 0.92rem;
+    }
+
+    .q-box p.question {
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .q-box p.answer {
+      color: #334155;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+    }
+
+    @media print {
+      body { padding: 0; background: #fff; }
+      .header-card { box-shadow: none; border-radius: 0; }
+      .laptop-card { break-inside: avoid; }
+      .deep-card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- HEADER CARD -->
+    <div class="header-card">
+      <span class="badge-kampus">Politeknik Elektronika Negeri Surabaya (PENS)</span>
+      <h1>Ujian Tengah Semester: Konsep Teknologi Informasi</h1>
+      <p class="subtitle">Laporan Komparasi & Analisis Spesifikasi Teknis 5 Laptop Performa Tinggi di Bawah Rp 10 Juta</p>
+      
+      <div class="meta-grid">
+        <div class="meta-item">
+          <strong>Penyusun (Mahasiswa)</strong>
+          Rochmad Djojo Oktabianto (3126600126)
+        </div>
+        <div class="meta-item">
+          <strong>Program Studi & Kelas</strong>
+          D4 Teknik Informatika — STr IT A/B
+        </div>
+        <div class="meta-item">
+          <strong>Dosen Pengampu</strong>
+          Dr. Iwan Syarif, S.Kom., M.Kom., Ph.D.
+        </div>
+        <div class="meta-item">
+          <strong>Deadline & Media</strong>
+          18 Oktober 2026 • ethol.pens.ac.id
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: LAPTOP SHOWCASE WITH PICTURES -->
+    <div class="section-title">5 Kontestan Laptop yang Dibandingkan (Model Resmi & Foto Fisik)</div>
+    
+    <div class="laptop-grid">
+
+      <!-- LAPTOP 1: LENOVO (CHAMPION) -->
+      <div class="laptop-card highlight">
+        <span class="badge-champion">🥇 Pilihan Utama (Winner)</span>
+        <div class="img-container">
+          <img src="https://p4-ofp.static.pub/fes/cms/2024/09/13/spzmghk7e1tv951ptfc3rnxk53xc92310131.png" alt="Lenovo IdeaPad Slim 3 14IAH8">
+        </div>
+        <div class="card-body">
+          <div class="card-header-info">
+            <span class="model-tag">Model: 83EQ004DID</span>
+            <h3>Lenovo IdeaPad Slim 3 14</h3>
+            <div class="price-tag">Rp 8.599.000</div>
+          </div>
+          <ul class="specs-list">
+            <li><span class="label">CPU</span><span class="val">Intel Core i5-12450H (8C/12T, 45W)</span></li>
+            <li><span class="label">Benchmark (CB R23)</span><span class="val">~9.250 pts Multi-Core</span></li>
+            <li><span class="label">RAM</span><span class="val">16 GB LPDDR5 4800MHz (Soldered)</span></li>
+            <li><span class="label">Storage</span><span class="val">512 GB NVMe PCIe 4.0 (1 Slot)</span></li>
+            <li><span class="label">Layar</span><span class="val">14" IPS FHD 300 nits Anti-Glare</span></li>
+            <li><span class="label">Ketahanan</span><span class="val">Standar Militer MIL-STD-810H</span></li>
+            <li><span class="label">Software Asli</span><span class="val">Win 11 + Office Home & Student (OHS)</span></li>
+          </ul>
+          <div class="feature-tags">
+            <span class="tag tag-green">TCO 3 Thn Terendah</span>
+            <span class="tag tag-blue">Keyboard AccuType</span>
+            <span class="tag tag-purple">SD Card Penuh</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LAPTOP 2: AXIOO HYPE 5 -->
+      <div class="laptop-card">
+        <div class="img-container">
+          <img src="https://www.axiooworld.com/uploads/products/c453ef7d-026f-4bc1-9811-94d4f2918524.png" alt="Axioo Hype 5 AMD X6">
+        </div>
+        <div class="card-body">
+          <div class="card-header-info">
+            <span class="model-tag">Model: H5A-6600</span>
+            <h3>Axioo Hype 5 AMD X6</h3>
+            <div class="price-tag">Rp 8.499.000</div>
+          </div>
+          <ul class="specs-list">
+            <li><span class="label">CPU</span><span class="val">AMD Ryzen 5 6600H (6C/12T, 45W)</span></li>
+            <li><span class="label">Benchmark (CB R23)</span><span class="val">~9.820 pts Multi-Core</span></li>
+            <li><span class="label">RAM Upgradability</span><span class="val">🏆 2 Slot SODIMM (Max 64GB)</span></li>
+            <li><span class="label">Storage Slot</span><span class="val">🏆 2 Slot M.2 NVMe PCIe</span></li>
+            <li><span class="label">Layar</span><span class="val">14" IPS WUXGA (16:10, 1920x1200)</span></li>
+            <li><span class="label">Port USB-C</span><span class="val">Full Function (PD + DP Out)</span></li>
+            <li><span class="label">Software Asli</span><span class="val">Windows 11 Home</span></li>
+          </ul>
+          <div class="feature-tags">
+            <span class="tag tag-blue">RAM Bisa Di-upgrade</span>
+            <span class="tag tag-green">2x Slot SSD</span>
+            <span class="tag tag-amber">Layar 16:10</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LAPTOP 3: ADVAN WORKPLUS -->
+      <div class="laptop-card">
+        <div class="img-container">
+          <img src="https://advandigital.com/wp-content/uploads/2023/12/workplus-update.png" alt="Advan WorkPlus">
+        </div>
+        <div class="card-body">
+          <div class="card-header-info">
+            <span class="model-tag">Model: 14-FHD+ / 6600H</span>
+            <h3>Advan WorkPlus</h3>
+            <div class="price-tag">Rp 7.999.000</div>
+          </div>
+          <ul class="specs-list">
+            <li><span class="label">CPU</span><span class="val">AMD Ryzen 5 6600H (6C/12T, 45W)</span></li>
+            <li><span class="label">Benchmark (CB R23)</span><span class="val">🏆 ~10.150 pts (Tertinggi)</span></li>
+            <li><span class="label">RAM</span><span class="val">16 GB LPDDR5 6400MHz (Soldered)</span></li>
+            <li><span class="label">Storage Slot</span><span class="val">🏆 2 Slot M.2 NVMe PCIe</span></li>
+            <li><span class="label">Material Bodi</span><span class="val">Full Metal Aluminium (~1,33 kg)</span></li>
+            <li><span class="label">Charger</span><span class="val">Type-C GaN 100W Saku</span></li>
+            <li><span class="label">Port USB-C</span><span class="val">2x Full Function USB-C</span></li>
+          </ul>
+          <div class="feature-tags">
+            <span class="tag tag-green">Raw CPU King</span>
+            <span class="tag tag-blue">Full Metal Bodi</span>
+            <span class="tag tag-amber">Cas 100W GaN</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LAPTOP 4: ACER ASPIRE 5 SLIM -->
+      <div class="laptop-card">
+        <div class="img-container">
+          <img src="https://static-ecapac.acer.com/media/wysiwyg/Mobile-Banner-Aspire-5-Slim-12th-Gen_MX550-1200-x-1200px.jpg" alt="Acer Aspire 5 Slim">
+        </div>
+        <div class="card-body">
+          <div class="card-header-info">
+            <span class="model-tag">Model: A514-56M-534E</span>
+            <h3>Acer Aspire 5 Slim</h3>
+            <div class="price-tag">Rp 8.699.000</div>
+          </div>
+          <ul class="specs-list">
+            <li><span class="label">CPU</span><span class="val">Intel Core i5-1335U (10C/12T, 15W)</span></li>
+            <li><span class="label">Benchmark (CB R23)</span><span class="val">~8.120 pts Multi-Core</span></li>
+            <li><span class="label">RAM</span><span class="val">16 GB LPDDR5 4800MHz (Soldered)</span></li>
+            <li><span class="label">Port Ekstrem</span><span class="val">🏆 Thunderbolt 4 (40 Gbps)</span></li>
+            <li><span class="label">Daya Baterai</span><span class="val">🏆 50 Whr (~8,5 Jam Nyata)</span></li>
+            <li><span class="label">Jaringan</span><span class="val">Wi-Fi 6E (6 GHz Band)</span></li>
+            <li><span class="label">Software Asli</span><span class="val">Win 11 + OHS Asli Permanen</span></li>
+          </ul>
+          <div class="feature-tags">
+            <span class="tag tag-purple">Thunderbolt 4</span>
+            <span class="tag tag-green">Baterai Paling Awet</span>
+            <span class="tag tag-blue">Cover Metal</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LAPTOP 5: ASUS VIVOBOOK 14 -->
+      <div class="laptop-card">
+        <div class="img-container">
+          <img src="https://dlcdnwebimgs.asus.com/gain/8e05f618-e30b-4f59-8970-09d828d23b9d/w800" alt="ASUS Vivobook 14">
+        </div>
+        <div class="card-body">
+          <div class="card-header-info">
+            <span class="model-tag">Model: A1404VA-VIPS551</span>
+            <h3>ASUS Vivobook 14</h3>
+            <div class="price-tag">Rp 8.799.000</div>
+          </div>
+          <ul class="specs-list">
+            <li><span class="label">CPU</span><span class="val">Intel Core i5-1335U (10C/12T, 15W)</span></li>
+            <li><span class="label">Benchmark (CB R23)</span><span class="val">~7.940 pts Multi-Core</span></li>
+            <li><span class="label">RAM Upgradability</span><span class="val">8GB Onboard + 1 Slot SODIMM</span></li>
+            <li><span class="label">Layar</span><span class="val">14" IPS FHD Anti-Glare</span></li>
+            <li><span class="label">Engsel</span><span class="val">ErgoLift 180° Layflat</span></li>
+            <li><span class="label">Fitur Higienis</span><span class="val">Antimicrobial Guard Plus</span></li>
+            <li><span class="label">Software Asli</span><span class="val">Win 11 + OHS Asli Permanen</span></li>
+          </ul>
+          <div class="feature-tags">
+            <span class="tag tag-blue">Engsel ErgoLift</span>
+            <span class="tag tag-amber">1x Slot SODIMM</span>
+            <span class="tag tag-green">Garansi 2 Thn Global</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SECTION: BAGIAN F - TABEL PERBANDINGAN LENGKAP -->
+    <div class="section-title">Bagian F — Tabel Perbandingan Lengkap Lima Laptop</div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th class="param-col">Parameter Teknis</th>
+            <th>Axioo Hype 5 AMD X6</th>
+            <th>Advan WorkPlus</th>
+            <th>Lenovo IdeaPad Slim 3 14</th>
+            <th>Acer Aspire 5 Slim</th>
+            <th>ASUS Vivobook 14</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Merek dan Model</strong></td>
+            <td>Axioo Hype 5 (H5A-6600)</td>
+            <td>Advan WorkPlus (14-FHD+)</td>
+            <td>Lenovo Slim 3 (83EQ004DID)</td>
+            <td>Acer Aspire 5 (A514-56M)</td>
+            <td>ASUS Vivobook (A1404VA)</td>
+          </tr>
+          <tr>
+            <td><strong>Harga Pasaran</strong></td>
+            <td>Rp 8.499.000</td>
+            <td class="winner">Rp 7.999.000 (Termurah)</td>
+            <td>Rp 8.599.000</td>
+            <td>Rp 8.699.000</td>
+            <td>Rp 8.799.000</td>
+          </tr>
+          <tr>
+            <td><strong>CPU dan Generasi</strong></td>
+            <td>AMD Ryzen 5 6600H (Zen 3+)</td>
+            <td>AMD Ryzen 5 6600H (Zen 3+)</td>
+            <td>Intel Core i5-12450H (Gen-12)</td>
+            <td>Intel Core i5-1335U (Gen-13)</td>
+            <td>Intel Core i5-1335U (Gen-13)</td>
+          </tr>
+          <tr>
+            <td><strong>Core / Thread</strong></td>
+            <td>6 Core / 12 Thread (45W)</td>
+            <td>6 Core / 12 Thread (45W)</td>
+            <td>8 Core (4P+4E) / 12 Thread (45W)</td>
+            <td>10 Core (2P+8E) / 12 Thread (15W)</td>
+            <td>10 Core (2P+8E) / 12 Thread (15W)</td>
+          </tr>
+          <tr>
+            <td><strong>Cache (L1 / L2 / L3)</strong></td>
+            <td>384 KB / 3 MB / 16 MB L3</td>
+            <td>384 KB / 3 MB / 16 MB L3</td>
+            <td>640 KB / 7 MB / 12 MB Smart</td>
+            <td>960 KB / 12 MB / 12 MB Smart</td>
+            <td>960 KB / 12 MB / 12 MB Smart</td>
+          </tr>
+          <tr>
+            <td><strong>RAM & Upgradeability</strong></td>
+            <td class="winner">🏆 2 Slot SODIMM DDR5 (ke 64GB)</td>
+            <td>16 GB LPDDR5 Soldered</td>
+            <td>16 GB LPDDR5 Soldered</td>
+            <td>16 GB LPDDR5 Soldered</td>
+            <td>8GB Onboard + 1 Slot SODIMM</td>
+          </tr>
+          <tr>
+            <td><strong>GPU dan VRAM</strong></td>
+            <td class="winner">Radeon 660M (RDNA 2)</td>
+            <td class="winner">Radeon 660M (RDNA 2)</td>
+            <td>Intel UHD Graphics 64EU</td>
+            <td>Intel Iris Xe 80EU</td>
+            <td>Intel Iris Xe 80EU</td>
+          </tr>
+          <tr>
+            <td><strong>Storage & Antarmuka</strong></td>
+            <td class="winner">512 GB PCIe (2 Slot M.2)</td>
+            <td class="winner">512 GB PCIe (2 Slot M.2)</td>
+            <td>512 GB PCIe Gen 4 (1 Slot)</td>
+            <td>512 GB PCIe Gen 4 (1 Slot)</td>
+            <td>512 GB PCIe Gen 4 (1 Slot)</td>
+          </tr>
+          <tr>
+            <td><strong>Standar IEEE 802.11</strong></td>
+            <td>Wi-Fi 6 (802.11ax) + BT 5.2</td>
+            <td>Wi-Fi 6 (802.11ax) + BT 5.2</td>
+            <td>Wi-Fi 6 (802.11ax) + BT 5.1</td>
+            <td class="winner">Wi-Fi 6E (2.4/5/6 GHz)</td>
+            <td class="winner">Wi-Fi 6E (2.4/5/6 GHz)</td>
+          </tr>
+          <tr>
+            <td><strong>Kualitas Layar</strong></td>
+            <td class="winner">14" IPS 16:10 (1920x1200)</td>
+            <td class="winner">14" IPS 16:10 (1920x1200)</td>
+            <td>14" IPS 16:9 FHD Anti-Glare</td>
+            <td>14" IPS 16:9 ComfyView</td>
+            <td>14" IPS 16:9 Anti-Glare</td>
+          </tr>
+          <tr>
+            <td><strong>Port USB-C</strong></td>
+            <td>Full Function (PD + DP)</td>
+            <td>2x Full Function (100W PD)</td>
+            <td>Full Function (PD + DP 1.2)</td>
+            <td class="winner">🏆 Thunderbolt 4 (40 Gbps)</td>
+            <td>Standar Data Only</td>
+          </tr>
+          <tr>
+            <td><strong>Daya Tahan Baterai</strong></td>
+            <td>58 Whr (~6,5 Jam)</td>
+            <td>58 Whr (~7 Jam)</td>
+            <td>47 Whr (~5,5 Jam)</td>
+            <td class="winner">🏆 50 Whr (~8,5 Jam Awet)</td>
+            <td>42 Whr (~5,5 Jam)</td>
+          </tr>
+          <tr>
+            <td><strong>Material & Ketahanan</strong></td>
+            <td>Polikarbonat ABS (1,42 kg)</td>
+            <td class="winner">Full Metal Aluminium (1,33 kg)</td>
+            <td class="winner">MIL-STD-810H Militer (1,37 kg)</td>
+            <td>Cover Metal (1,45 kg)</td>
+            <td>MIL-STD-810H (1,38 kg)</td>
+          </tr>
+          <tr>
+            <td><strong>Software Asli Bawaan</strong></td>
+            <td>Windows 11 Home</td>
+            <td>Windows 11 Home</td>
+            <td class="winner">Win 11 + OHS Asli Permanen</td>
+            <td class="winner">Win 11 + OHS Asli Permanen</td>
+            <td class="winner">Win 11 + OHS Asli Permanen</td>
+          </tr>
+          <tr>
+            <td><strong>Cinebench R23 Multi</strong></td>
+            <td>~9.820 pts</td>
+            <td class="winner">~10.150 pts (Juara)</td>
+            <td>~9.250 pts</td>
+            <td>~8.120 pts</td>
+            <td>~7.940 pts</td>
+          </tr>
+          <tr>
+            <td><strong>Estimasi TCO (3 Tahun)</strong></td>
+            <td>Rp 8.550.000</td>
+            <td>Rp 8.050.000</td>
+            <td class="winner">🏆 Rp 6.650.000 (Paling Hemat)</td>
+            <td>Rp 6.950.000</td>
+            <td>Rp 6.950.000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SECTION: ANALISIS TEKNIS MENDALAM -->
+    <div class="section-title">Jawaban Analisis Pertanyaan Kunci Rubrik UTS</div>
+
+    <div class="deep-card">
+      <h4>⚙️ 1. Analisis CPU & Arsitektur Multitasking</h4>
+      <div class="q-box">
+        <p class="question">a. Prosesor mana yang paling sesuai untuk multitasking dan pemrograman?</p>
+        <p class="answer"><strong>AMD Ryzen 5 6600H (Axioo & Advan)</strong> paling unggul untuk kompilasi kode berat (C/C++, Android Studio, Docker) karena memiliki 6 core performa murni berarsitektur Zen 3+ dengan clock dasar tinggi (3.3 GHz) dan TDP sustained 45 Watt tanpa terhambat thermal throttling sedalam prosesor seri U 15 Watt.</p>
+      </div>
+      <div class="q-box">
+        <p class="question">b. Apakah jumlah core yang lebih banyak selalu membuat prosesor lebih cepat?</p>
+        <p class="answer"><strong>Tidak selalu.</strong> Kinerja ditentukan oleh: <em>Performa = Jumlah Core × IPC × Clock Frequency</em> dan dibatasi Hukum Amdahl. Core i5-1335U memiliki 10 core, tetapi 8 di antaranya adalah Efficient-core berkecepatan rendah (0.9–3.4 GHz). Untuk tugas single-threaded atau komputasi paralel intensif, 6 core performa Ryzen 6600H terbukti menghasilkan skor Cinebench multi-core ~25% lebih tinggi.</p>
+      </div>
+    </div>
+
+    <div class="deep-card">
+      <h4>🧠 2. Analisis RAM & Hierarki Cache</h4>
+      <div class="q-box">
+        <p class="question">a. Apakah RAM 16 GB cukup? Dalam kondisi apa RAM 32 GB lebih menguntungkan?</p>
+        <p class="answer">RAM 16 GB cukup untuk tugas mahasiswa informatika tingkat 1–3 (OS + IDE + 20 tab browser + Docker container ringan memakan ~11 GB). Namun, RAM 32 GB mutlak menguntungkan saat menjalankan multiple VM di VirtualBox/VMware untuk simulasi jaringan dan melatih dataset machine learning berukuran besar secara lokal.</p>
+      </div>
+      <div class="q-box">
+        <p class="question">b. Mengapa Axioo Hype 5 menjadi anomali positif di bagian RAM?</p>
+        <p class="answer">Karena saat seluruh brand global dan lokal lain menerapkan sistem RAM tersolder (LPDDR5 soldered mati), Axioo menyediakan <strong>2 slot SODIMM DDR5</strong> yang dapat dilepas-pasang hingga 64 GB, menjamin usia pakai laptop bebas dari planned obsolescence.</p>
+      </div>
+    </div>
+
+    <div class="deep-card">
+      <h4>💰 3. Analisis Total Cost of Ownership (TCO) & Pemenang Akhir</h4>
+      <div class="q-box">
+        <p class="question">Mengapa Lenovo IdeaPad Slim 3 terpilih sebagai Laptop Terbaik, mengalahkan Advan yang lebih murah?</p>
+        <p class="answer">
+          Meskipun Advan WorkPlus memiliki harga beli awal paling murah (Rp 7.999.000), Advan belum menyertakan lisensi Microsoft Office permanen (biaya lisensi resmi OHS ~Rp 1,4 juta). Sebaliknya, <strong>Lenovo IdeaPad Slim 3 (Rp 8.599.000)</strong> sudah menyertakan Windows 11 + OHS resmi seumur hidup, memiliki sasis bersertifikasi ketahanan militer MIL-STD-810H, keyboard AccuType ternyaman untuk coding, dan depresiasi harga jual kembali yang stabil. Perhitungan TCO 3 tahun membuktikan total kepemilikan riil Lenovo hanya <strong>Rp 6.650.000</strong> (Paling hemat di antara kelimanya).
+        </p>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Laporan Resmi Ujian Tengah Semester — Mata Kuliah Konsep Teknologi Informasi</p>
+      <p>Politeknik Elektronika Negeri Surabaya (PENS) • Tahun Akademik 2025/2026</p>
+      <p style="margin-top: 6px; font-family: 'Fira Code', monospace; font-size: 0.75rem;">Source Code & Laporan Git: https://github.com/kycjojo/bahanKTI</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>

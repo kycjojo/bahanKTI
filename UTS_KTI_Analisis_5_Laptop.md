@@ -9,11 +9,20 @@
 ## DAFTAR 5 LAPTOP YANG DIANALISIS (MODEL RESMI & SPESIFIK)
 Untuk memenuhi instruksi bahwa setiap laptop harus memiliki identitas merek, seri, dan model yang presisi, berikut adalah 5 kontestan di rentang harga setara (**Rp 8,2 – 9,1 Juta**):
 
-1. **Laptop A:** `Axioo Hype 5 AMD X6` (Model: H5A-6600 / AMD Ryzen 5 6600H)
-2. **Laptop B:** `Advan WorkPlus` (Model: 14-FHD+ / AMD Ryzen 5 6600H)
-3. **Laptop C:** `Lenovo IdeaPad Slim 3 14IAH8` (Model: 83EQ004DID / Intel Core i5-12450H)
-4. **Laptop D:** `Acer Aspire 5 Slim` (Model: A514-56M-534E / Intel Core i5-1335U)
-5. **Laptop E:** `ASUS Vivobook 14` (Model: A1404VA-VIPS551 / Intel Core i5-1335U)
+1. **Laptop A: Axioo Hype 5 AMD X6** (Model: `H5A-6600` / AMD Ryzen 5 6600H)  
+   ![Axioo Hype 5 AMD X6](https://www.axiooworld.com/uploads/products/c453ef7d-026f-4bc1-9811-94d4f2918524.png)
+
+2. **Laptop B: Advan WorkPlus** (Model: `14-FHD+` / AMD Ryzen 5 6600H)  
+   ![Advan WorkPlus](https://advandigital.com/wp-content/uploads/2023/12/workplus-update.png)
+
+3. **Laptop C: Lenovo IdeaPad Slim 3 14IAH8** (Model: `83EQ004DID` / Intel Core i5-12450H) — 🏆 *Rekomendasi Utama*  
+   ![Lenovo IdeaPad Slim 3](https://p4-ofp.static.pub/fes/cms/2024/09/13/spzmghk7e1tv951ptfc3rnxk53xc92310131.png)
+
+4. **Laptop D: Acer Aspire 5 Slim** (Model: `A514-56M-534E` / Intel Core i5-1335U)  
+   ![Acer Aspire 5 Slim](https://static-ecapac.acer.com/media/wysiwyg/Mobile-Banner-Aspire-5-Slim-12th-Gen_MX550-1200-x-1200px.jpg)
+
+5. **Laptop E: ASUS Vivobook 14** (Model: `A1404VA-VIPS551` / Intel Core i5-1335U)  
+   ![ASUS Vivobook 14](https://dlcdnwebimgs.asus.com/gain/8e05f618-e30b-4f59-8970-09d828d23b9d/w800)
 
 ---
 
