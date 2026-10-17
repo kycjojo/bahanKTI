@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Laporan Spesifikasi Teknis 5 Laptop Under 10 Juta</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 15mm 15mm 15mm 15mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Times New Roman", Times, serif;
+      color: #111111;
+      line-height: 1.45;
+      font-size: 10pt;
+      background: #ffffff;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 265mm;
+      page-break-after: always;
+      break-after: page;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .doc-header {
+      text-align: center;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+    }
+
+    .doc-header h1 {
+      font-size: 13pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .doc-header p {
+      font-size: 9pt;
+      margin-bottom: 2px;
+    }
+
+    .product-title {
+      font-size: 12pt;
+      font-weight: bold;
+      border-bottom: 1px solid #333333;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+
+    /* IMAGE GALLERY: DUA GAMBAR BERDAMPINGAN */
+    .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 12px;
+      height: 150px;
+    }
+
+    .image-box {
+      flex: 1;
+      height: 150px;
+      border: 1px solid #cccccc;
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fafafa;
+    }
+
+    .image-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .image-caption {
+      text-align: center;
+      font-size: 8pt;
+      font-style: italic;
+      color: #444444;
+      margin-top: -6px;
+      margin-bottom: 10px;
+    }
+
+    /* SPECIFICATION TABLE & LISTS */
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+      font-size: 9pt;
+    }
+
+    .spec-table th, .spec-table td {
+      border: 1px solid #333333;
+      padding: 4.5px 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .spec-table th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+      width: 28%;
+    }
+
+    .section-subtitle {
+      font-size: 10pt;
+      font-weight: bold;
+      margin: 8px 0 4px 0;
+      text-decoration: underline;
+    }
+
+    ul.spec-notes {
+      list-style-type: square;
+      margin-left: 18px;
+      font-size: 9pt;
+      margin-bottom: 8px;
+    }
+
+    ul.spec-notes li {
+      margin-bottom: 3px;
+    }
+
+    .page-num {
+      margin-top: auto;
+      text-align: right;
+      font-size: 8pt;
+      color: #555555;
+      border-top: 1px solid #cccccc;
+      padding-top: 4px;
+    }
+
+    /* COMPARISON TABLE ON PAGE 1 */
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8pt;
+      margin-top: 10px;
+    }
+
+    .summary-table th, .summary-table td {
+      border: 1px solid #000000;
+      padding: 5px;
+      text-align: left;
+    }
+
+    .summary-table th {
+      background-color: #e5e5e5;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HALAMAN 1: RINGKASAN & TABEL KOMPARASI ==================== -->
+  <div class="page">
+    <div class="doc-header">
+      <h1>LAPORAN TEKNIK: SPESIFIKASI DAN KOMPARASI 5 PRODUK LAPTOP</h1>
+      <p>Mata Kuliah: Konsep Teknologi Informasi | Program Studi D4 Teknik Informatika</p>
+      <p>Politeknik Elektronika Negeri Surabaya (PENS) | Dosen Pengampu: Dr. Iwan Syarif, S.Kom., M.Kom.</p>
+      <p>Penyusun: Rochmad Djojo Oktabianto (NRP: 3126600126) | Batas Anggaran: Di Bawah Rp 10.000.000</p>
+    </div>
+
+    <p style="font-size: 9pt; margin-bottom: 8px; text-align: justify;">
+      Laporan teknis ini menyajikan identifikasi dan catatan spesifikasi lengkap dari 5 model laptop di rentang harga setara (Rp 8,2 s/d Rp 9,1 Juta). Seluruh data teknis dikompilasi dari dokumentasi basis data resmi produsen (Intel ARK, AMD Product Master, dan Lenovo PSREF) tanpa elemen visual tambahan, ditujukan sebagai bahan verifikasi teknis akademis.
+    </p>
+
+    <div class="product-title" style="margin-top: 6px;">Tabel Ringkasan Spesifikasi Kunci 5 Laptop</div>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Lenovo IdeaPad Slim 3</th>
+          <th>Axioo Hype 5 AMD X6</th>
+          <th>Advan WorkPlus</th>
+          <th>Acer Aspire 5 Slim</th>
+          <th>ASUS Vivobook 14</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Nomor Model</strong></td>
+          <td>14IAH8 (83EQ004DID)</td>
+          <td>H5A-6600</td>
+          <td>14-FHD+ / 6600H</td>
+          <td>A514-56M-534E</td>
+          <td>A1404VA-VIPS551</td>
+        </tr>
+        <tr>
+          <td><strong>Harga Pasar</strong></td>
+          <td>Rp 8.599.000</td>
+          <td>Rp 8.499.000</td>
+          <td>Rp 7.999.000</td>
+          <td>Rp 8.699.000</td>
+          <td>Rp 8.799.000</td>
+        </tr>
+        <tr>
+          <td><strong>Prosesor</strong></td>
+          <td>Intel Core i5-12450H</td>
+          <td>AMD Ryzen 5 6600H</td>
+          <td>AMD Ryzen 5 6600H</td>
+          <td>Intel Core i5-1335U</td>
+          <td>Intel Core i5-1335U</td>
+        </tr>
+        <tr>
+          <td><strong>Core / Thread</strong></td>
+          <td>8 Core / 12 Thread</td>
+          <td>6 Core / 12 Thread</td>
+          <td>6 Core / 12 Thread</td>
+          <td>10 Core / 12 Thread</td>
+          <td>10 Core / 12 Thread</td>
+        </tr>
+        <tr>
+          <td><strong>TDP Prosesor</strong></td>
+          <td>45W (Turbo 95W)</td>
+          <td>45W (cTDP 35-54W)</td>
+          <td>45W (cTDP 35-54W)</td>
+          <td>15W (Turbo 55W)</td>
+          <td>15W (Turbo 55W)</td>
+        </tr>
+        <tr>
+          <td><strong>CPU Cache L3</strong></td>
+          <td>12 MB Smart Cache</td>
+          <td>16 MB Monolithic</td>
+          <td>16 MB Monolithic</td>
+          <td>12 MB Smart Cache</td>
+          <td>12 MB Smart Cache</td>
+        </tr>
+        <tr>
+          <td><strong>RAM Bawaan</strong></td>
+          <td>16 GB LPDDR5 4800MHz</td>
+          <td>16 GB DDR5 4800MHz</td>
+          <td>16 GB LPDDR5 6400MHz</td>
+          <td>16 GB LPDDR5 4800MHz</td>
+          <td>16 GB DDR4 3200MHz</td>
+        </tr>
+        <tr>
+          <td><strong>Slot Ekspansi RAM</strong></td>
+          <td>Soldered (Tidak ada slot)</td>
+          <td>2 Slot SODIMM (ke 64GB)</td>
+          <td>Soldered (Tidak ada slot)</td>
+          <td>Soldered (Tidak ada slot)</td>
+          <td>1 Slot SODIMM Tersedia</td>
+        </tr>
+        <tr>
+          <td><strong>Slot SSD M.2</strong></td>
+          <td>1 Slot M.2 2242</td>
+          <td>2 Slot M.2 2280 NVMe</td>
+          <td>2 Slot M.2 2280 NVMe</td>
+          <td>1 Slot M.2 2280 NVMe</td>
+          <td>1 Slot M.2 2280 NVMe</td>
+        </tr>
+        <tr>
+          <td><strong>GPU</strong></td>
+          <td>Intel UHD (64 EU)</td>
+          <td>Radeon 660M (RDNA 2)</td>
+          <td>Radeon 660M (RDNA 2)</td>
+          <td>Intel Iris Xe (80 EU)</td>
+          <td>Intel Iris Xe (80 EU)</td>
+        </tr>
+        <tr>
+          <td><strong>Layar</strong></td>
+          <td>14" IPS FHD (16:9)</td>
+          <td>14" IPS WUXGA (16:10)</td>
+          <td>14" IPS FHD+ (16:10)</td>
+          <td>14" IPS FHD (16:9)</td>
+          <td>14" IPS FHD (16:9)</td>
+        </tr>
+        <tr>
+          <td><strong>Port USB-C</strong></td>
+          <td>Full Function (PD + DP)</td>
+          <td>Full Function (PD + DP)</td>
+          <td>2x Full Function (100W)</td>
+          <td>Thunderbolt 4 (40Gbps)</td>
+          <td>USB-C 3.2 (Data Only)</td>
+        </tr>
+        <tr>
+          <td><strong>Baterai</strong></td>
+          <td>47 Whr (~5,5 Jam)</td>
+          <td>58 Whr (~6,5 Jam)</td>
+          <td>58 Whr (~7 Jam)</td>
+          <td>50 Whr (~8,5 Jam)</td>
+          <td>42 Whr (~5,5 Jam)</td>
+        </tr>
+        <tr>
+          <td><strong>Ketahanan Fisik</strong></td>
+          <td>MIL-STD-810H Militer</td>
+          <td>Polikarbonat ABS</td>
+          <td>Full Metal Aluminium</td>
+          <td>Cover Aluminium</td>
+          <td>MIL-STD-810H Militer</td>
+        </tr>
+        <tr>
+          <td><strong>Office Asli (OHS)</strong></td>
+          <td>Ya (Permanen Seumur Hidup)</td>
+          <td>Tidak (Hanya Windows)</td>
+          <td>Tidak (Hanya Windows)</td>
+          <td>Ya (Permanen Seumur Hidup)</td>
+          <td>Ya (Permanen Seumur Hidup)</td>
+        </tr>
+        <tr>
+          <td><strong>Cinebench R23 Multi</strong></td>
+          <td>~9.250 poin</td>
+          <td>~9.820 poin</td>
+          <td>~10.150 poin</td>
+          <td>~8.120 poin</td>
+          <td>~7.940 poin</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="page-num">Dokumen Laporan Teknis KTI — Halaman 1</div>
+  </div>
+
+  <!-- ==================== HALAMAN 2: LENOVO IDEAPAD SLIM 3 14IAH8 ==================== -->
+  <div class="page">
+    <div class="product-title">1. Lenovo IdeaPad Slim 3 14IAH8 (Model: 83EQ004DID)</div>
+
+    <div class="image-row">
+      <div class="image-box">
+        <img src="assets/lenovo.png" alt="Tampak Depan Lenovo IdeaPad Slim 3">
+      </div>
+      <div class="image-box">
+        <img src="assets/lenovo_2.jpg" alt="Tampak Sudut dan Keyboard Lenovo IdeaPad Slim 3">
+      </div>
+    </div>
+    <div class="image-caption">Gambar 1.1: Tampak depan dan sudut keyboard Lenovo IdeaPad Slim 3 14IAH8.</div>
+
+    <table class="spec-table">
+      <tr>
+        <th>Harga Pasar</th>
+        <td>Rp 8.599.000 (Garansi Resmi 2 Tahun Lenovo Indonesia)</td>
+      </tr>
+      <tr>
+        <th>Prosesor (CPU)</th>
+        <td>Intel Core i5-12450H (8 Core / 12 Thread, 4 P-core up to 4.4 GHz + 4 E-core up to 3.3 GHz)</td>
+      </tr>
+      <tr>
+        <th>Daya & Cache CPU</th>
+        <td>TDP Base 45W, Max Turbo 95W | Cache L1: 640 KB, L2: 7 MB, L3: 12 MB Intel Smart Cache</td>
+      </tr>
+      <tr>
+        <th>Memori (RAM)</th>
+        <td>16 GB LPDDR5 4800 MHz Dual-Channel (Tersolder di motherboard / Non-upgradeable)</td>
+      </tr>
+      <tr>
+        <th>Penyimpanan</th>
+        <td>512 GB SSD M.2 2242 PCIe 4.0 x4 NVMe (Tersedia 1 slot M.2)</td>
+      </tr>
+      <tr>
+        <th>Kartu Grafis (GPU)</th>
+        <td>Intel UHD Graphics for 12th Gen Processors (64 Execution Units, Shared Memory)</td>
+      </tr>
+      <tr>
+        <th>Layar & Visual</th>
+        <td>14.0 inci IPS, Resolusi Full HD (1920 x 1080), 16:9, Anti-Glare, 300 nits, 45% NTSC, TÜV Low Blue Light</td>
+      </tr>
+      <tr>
+        <th>Port & Konektivitas</th>
+        <td>1x USB-C 3.2 Gen 1 (Power Delivery & DisplayPort 1.2), 2x USB 3.2 Gen 1 Type-A, 1x HDMI 1.4b, 1x SD Card Reader, 1x Audio Jack 3.5mm</td>
+      </tr>
+      <tr>
+        <th>Jaringan Nirkabel</th>
+        <td>Wi-Fi 6 (802.11ax 2x2) + Bluetooth 5.1</td>
+      </tr>
+      <tr>
+        <th>Baterai & Pengisian</th>
+        <td>47 Whr Lithium-Polymer, Adaptor 65W, Dukungan Rapid Charge Boost (15 menit cas untuk 2 jam pakai)</td>
+      </tr>
+      <tr>
+        <th>Konstruksi & Bobot</th>
+        <td>Polikarbonat teruji standar militer MIL-STD-810H | Berat: 1,37 kg | Tebal: 17,9 mm</td>
+      </tr>
+      <tr>
+        <th>Sistem Operasi</th>
+        <td>Windows 11 Home 64-bit Original + Microsoft Office Home & Student 2021 Asli Permanen</td>
+      </tr>
+    </table>
+
+    <div class="section-subtitle">Catatan Analisis Teknis:</div>
+    <ul class="spec-notes">
+      <li><strong>Keunggulan:</strong> Papan ketik AccuType ergonomis nomor satu untuk pengetikan koding; sasis telah lulus 21 pengujian ketahanan militer MIL-STD-810H; menyertakan lisensi OHS permanen; dilengkapi pembaca kartu SD ukuran penuh.</li>
+      <li><strong>Keterbatasan:</strong> RAM disolder permanen tanpa slot ekspansi tambahan; slot SSD hanya tunggal (wajib mengganti modul lama jika ingin meningkatkan kapasitas).</li>
+      <li><strong>Benchmark Cinebench R23:</strong> Multi-Core: 9.250 poin | Single-Core: 1.560 poin.</li>
+    </ul>
+
+    <div class="page-num">Dokumen Laporan Teknis KTI — Halaman 2</div>
+  </div>
+
+  <!-- ==================== HALAMAN 3: AXIOO HYPE 5 AMD X6 ==================== -->
+  <div class="page">
+    <div class="product-title">2. Axioo Hype 5 AMD X6 (Model: H5A-6600)</div>
+
+    <div class="image-row">
+      <div class="image-box">
+        <img src="assets/axioo.jpg" alt="Tampak Depan Axioo Hype 5 AMD X6">
+      </div>
+      <div class="image-box">
+        <img src="assets/axioo_2.jpg" alt="Tampak Samping dan Port Axioo Hype 5">
+      </div>
+    </div>
+    <div class="image-caption">Gambar 1.2: Tampak depan dan perspektif sisi Axioo Hype 5 AMD X6.</div>
+
+    <table class="spec-table">
+      <tr>
+        <th>Harga Pasar</th>
+        <td>Rp 8.499.000 (Garansi Resmi 1 Tahun Axioo Indonesia + Axioo Care ADP)</td>
+      </tr>
+      <tr>
+        <th>Prosesor (CPU)</th>
+        <td>AMD Ryzen 5 6600H (6 Core / 12 Thread, Base 3.3 GHz, Max Boost up to 4.5 GHz, Zen 3+, 6nm TSMC)</td>
+      </tr>
+      <tr>
+        <th>Daya & Cache CPU</th>
+        <td>TDP 45W (cTDP 35-54W) | Cache L1: 384 KB, L2: 3 MB, L3: 16 MB Monolithic CCX</td>
+      </tr>
+      <tr>
+        <th>Memori (RAM)</th>
+        <td>16 GB DDR5 4800 MHz (Menggunakan 2 Slot SODIMM Dual-Channel, Fully Upgradeable s/d 64 GB)</td>
+      </tr>
+      <tr>
+        <th>Penyimpanan</th>
+        <td>512 GB SSD M.2 2280 NVMe PCIe Gen 3x4 (Tersedia 2 slot M.2 NVMe aktif)</td>
+      </tr>
+      <tr>
+        <th>Kartu Grafis (GPU)</th>
+        <td>AMD Radeon 660M (Arsitektur RDNA 2, 6 Compute Units, Clock 1900 MHz, Shared VRAM)</td>
+      </tr>
+      <tr>
+        <th>Layar & Visual</th>
+        <td>14.0 inci IPS, Resolusi WUXGA (1920 x 1200), Rasio 16:10, Anti-Glare, 300 nits, 45% NTSC</td>
+      </tr>
+      <tr>
+        <th>Port & Konektivitas</th>
+        <td>1x USB 3.2 Gen 1 Type-C (Full Function: Data, PD Charging, DisplayPort Out), 2x USB 3.2 Gen 1 Type-A, 1x USB 2.0, 1x HDMI, 1x MicroSD Slot, 1x Audio Jack</td>
+      </tr>
+      <tr>
+        <th>Jaringan Nirkabel</th>
+        <td>Wi-Fi 6 (802.11ax) + Bluetooth 5.2</td>
+      </tr>
+      <tr>
+        <th>Baterai & Pengisian</th>
+        <td>58 Whr Lithium-Polymer, Adaptor 65W (Mendukung pengisian daya via USB-C Power Delivery)</td>
+      </tr>
+      <tr>
+        <th>Konstruksi & Bobot</th>
+        <td>Material bodi polikarbonat ABS | Engsel 180° | Berat: 1,42 kg | Tebal: 17,8 mm</td>
+      </tr>
+      <tr>
+        <th>Sistem Operasi</th>
+        <td>Windows 11 Home 64-bit Original (Tanpa paket lisensi Microsoft Office permanen)</td>
+      </tr>
+    </table>
+
+    <div class="section-subtitle">Catatan Analisis Teknis:</div>
+    <ul class="spec-notes">
+      <li><strong>Keunggulan:</strong> Paling modular di kelasnya dengan 2 slot SODIMM DDR5 yang dapat di-upgrade hingga 64 GB; memiliki 2 slot SSD M.2 untuk ekspansi storage instan; rasio layar 16:10 lebih tinggi untuk produktivitas.</li>
+      <li><strong>Keterbatasan:</strong> Material plastik polikarbonat polos; belum menyertakan lisensi Microsoft Office permanen; speaker dan webcam tergolong standar.</li>
+      <li><strong>Benchmark Cinebench R23:</strong> Multi-Core: 9.820 poin | Single-Core: 1.460 poin.</li>
+    </ul>
+
+    <div class="page-num">Dokumen Laporan Teknis KTI — Halaman 3</div>
+  </div>
+
+  <!-- ==================== HALAMAN 4: ADVAN WORKPLUS ==================== -->
+  <div class="page">
+    <div class="product-title">3. Advan WorkPlus (Model: 14-FHD+ / 6600H)</div>
+
+    <div class="image-row">
+      <div class="image-box">
+        <img src="assets/advan.png" alt="Tampak Depan Advan WorkPlus">
+      </div>
+      <div class="image-box">
+        <img src="assets/advan_2.jpg" alt="Tampak Sudut dan Bodi Metal Advan WorkPlus">
+      </div>
+    </div>
+    <div class="image-caption">Gambar 1.3: Tampak depan dan konstruksi metal aluminium Advan WorkPlus.</div>
+
+    <table class="spec-table">
+      <tr>
+        <th>Harga Pasar</th>
+        <td>Rp 7.999.000 (Garansi Resmi 1 Tahun Advan Indonesia)</td>
+      </tr>
+      <tr>
+        <th>Prosesor (CPU)</th>
+        <td>AMD Ryzen 5 6600H (6 Core / 12 Thread, Base 3.3 GHz, Max Boost 4.5 GHz, Zen 3+, 6nm)</td>
+      </tr>
+      <tr>
+        <th>Daya & Cache CPU</th>
+        <td>TDP 45W | Cache L1: 384 KB, L2: 3 MB, L3: 16 MB Monolithic Shared Cache</td>
+      </tr>
+      <tr>
+        <th>Memori (RAM)</th>
+        <td>16 GB LPDDR5 6400 MHz Dual-Channel 128-bit (Tersolder di motherboard / Non-upgradeable)</td>
+      </tr>
+      <tr>
+        <th>Penyimpanan</th>
+        <td>512 GB SSD M.2 2280 NVMe PCIe Gen 3x4 (Tersedia 2 slot M.2 NVMe)</td>
+      </tr>
+      <tr>
+        <th>Kartu Grafis (GPU)</th>
+        <td>AMD Radeon 660M (Arsitektur RDNA 2, 6 Compute Units, Clock 1900 MHz)</td>
+      </tr>
+      <tr>
+        <th>Layar & Visual</th>
+        <td>14.0 inci IPS, Resolusi Full HD+ (1920 x 1200), Rasio 16:10, Anti-Glare, 300 nits, 45% NTSC</td>
+      </tr>
+      <tr>
+        <th>Port & Konektivitas</th>
+        <td>2x USB 3.2 Gen 1 Type-C (Keduanya Full Function: Data, PD 100W Charging, DisplayPort), 2x USB 3.2 Gen 1 Type-A, 1x HDMI 2.0, 1x MicroSD slot, 1x Audio Jack</td>
+      </tr>
+      <tr>
+        <th>Jaringan Nirkabel</th>
+        <td>Wi-Fi 6 (802.11ax) + Bluetooth 5.2</td>
+      </tr>
+      <tr>
+        <th>Baterai & Pengisian</th>
+        <td>58 Whr (5050 mAh), Adaptor GaN Type-C 100W Saku (Mendukung Fast Charging)</td>
+      </tr>
+      <tr>
+        <th>Konstruksi & Bobot</th>
+        <td>Material bodi Full Metal Aluminium Anodized | Sensor Sidik Jari | Berat: 1,33 kg | Tebal: 17,8 mm</td>
+      </tr>
+      <tr>
+        <th>Sistem Operasi</th>
+        <td>Windows 11 Home 64-bit Original (Tanpa paket lisensi Microsoft Office permanen)</td>
+      </tr>
+    </table>
+
+    <div class="section-subtitle">Catatan Analisis Teknis:</div>
+    <ul class="spec-notes">
+      <li><strong>Keunggulan:</strong> Nilai rasio spek terhadap harga tertinggi; skor benchmark CPU tertinggi berkat RAM LPDDR5 6400MHz; sasis bodi full metal tipis dan kokoh; 2 slot SSD M.2; adaptor charger saku 100W GaN.</li>
+      <li><strong>Keterbatasan:</strong> RAM tersolder mati seumur hidup; belum termasuk lisensi Microsoft Office; jaringan service center resmi masih terkonsentrasi di kota besar.</li>
+      <li><strong>Benchmark Cinebench R23:</strong> Multi-Core: 10.150 poin | Single-Core: 1.470 poin.</li>
+    </ul>
+
+    <div class="page-num">Dokumen Laporan Teknis KTI — Halaman 4</div>
+  </div>
+
+  <!-- ==================== HALAMAN 5: ACER ASPIRE 5 SLIM ==================== -->
+  <div class="page">
+    <div class="product-title">4. Acer Aspire 5 Slim (Model: A514-56M-534E)</div>
+
+    <div class="image-row">
+      <div class="image-box">
+        <img src="assets/acer.jpg" alt="Tampak Depan Acer Aspire 5 Slim">
+      </div>
+      <div class="image-box">
+        <img src="assets/acer_2.jpg" alt="Tampak Samping dan Port Thunderbolt 4 Acer Aspire 5">
+      </div>
+    </div>
+    <div class="image-caption">Gambar 1.4: Tampak depan dan sisi samping port Acer Aspire 5 Slim.</div>
+
+    <table class="spec-table">
+      <tr>
+        <th>Harga Pasar</th>
+        <td>Rp 8.699.000 (Garansi Resmi 2 Tahun Acer Indonesia + 1 Tahun Priority Care ADP)</td>
+      </tr>
+      <tr>
+        <th>Prosesor (CPU)</th>
+        <td>Intel Core i5-1335U Generasi ke-13 (10 Core: 2 P-core up to 4.6 GHz + 8 E-core up to 3.4 GHz, 12 Thread)</td>
+      </tr>
+      <tr>
+        <th>Daya & Cache CPU</th>
+        <td>TDP Base 15W, Max Turbo 55W | Cache L1: 960 KB, L2: 12 MB, L3: 12 MB Intel Smart Cache</td>
+      </tr>
+      <tr>
+        <th>Memori (RAM)</th>
+        <td>16 GB LPDDR5 4800 MHz Dual-Channel (Tersolder di motherboard / Non-upgradeable)</td>
+      </tr>
+      <tr>
+        <th>Penyimpanan</th>
+        <td>512 GB SSD M.2 2280 NVMe PCIe Gen 4x4 (Tersedia 1 slot M.2 NVMe)</td>
+      </tr>
+      <tr>
+        <th>Kartu Grafis (GPU)</th>
+        <td>Intel Iris Xe Graphics (80 Execution Units, Shared VRAM)</td>
+      </tr>
+      <tr>
+        <th>Layar & Visual</th>
+        <td>14.0 inci IPS, Resolusi Full HD (1920 x 1080), 16:9, Acer ComfyView Matte, 250 nits, 45% NTSC</td>
+      </tr>
+      <tr>
+        <th>Port & Konektivitas</th>
+        <td>1x Thunderbolt 4 / USB4 Type-C (40 Gbps, Power Delivery, DisplayPort), 2x USB 3.2 Gen 1 Type-A, 1x HDMI 2.1, 1x Audio Jack</td>
+      </tr>
+      <tr>
+        <th>Jaringan Nirkabel</th>
+        <td>Wi-Fi 6E (Intel AX211, Pita 2.4 GHz, 5 GHz, dan 6 GHz) + Bluetooth 5.3</td>
+      </tr>
+      <tr>
+        <th>Baterai & Pengisian</th>
+        <td>50 Whr Lithium-Ion, Adaptor 65W | Daya tahan nyata mencapai 8 hingga 8,5 jam</td>
+      </tr>
+      <tr>
+        <th>Konstruksi & Bobot</th>
+        <td>Top cover aluminium metal, sasis polikarbonat | Pendingin TwinAir | Berat: 1,45 kg | Tebal: 17,9 mm</td>
+      </tr>
+      <tr>
+        <th>Sistem Operasi</th>
+        <td>Windows 11 Home 64-bit Original + Microsoft Office Home & Student 2021 Asli Permanen</td>
+      </tr>
+    </table>
+
+    <div class="section-subtitle">Catatan Analisis Teknis:</div>
+    <ul class="spec-notes">
+      <li><strong>Keunggulan:</strong> Dilengkapi port Thunderbolt 4 (40 Gbps) tercepat di kelasnya; daya tahan baterai paling awet (~8,5 jam); mendukung jaringan Wi-Fi 6E pita 6 GHz; termasuk garansi kerusakan fisik (ADP) di tahun pertama.</li>
+      <li><strong>Keterbatasan:</strong> RAM disolder mati; slot SSD hanya 1 buah; performa multi-thread di bawah prosesor seri H karena batas daya termal 15W.</li>
+      <li><strong>Benchmark Cinebench R23:</strong> Multi-Core: 8.120 poin | Single-Core: 1.660 poin.</li>
+    </ul>
+
+    <div class="page-num">Dokumen Laporan Teknis KTI — Halaman 5</div>
+  </div>
+
+  <!-- ==================== HALAMAN 6: ASUS VIVOBOOK 14 ==================== -->
+  <div class="page">
+    <div class="product-title">5. ASUS Vivobook 14 (Model: A1404VA-VIPS551)</div>
+
+    <div class="image-row">
+      <div class="image-box">
+        <img src="assets/asus.jpg" alt="Tampak Depan ASUS Vivobook 14">
+      </div>
+      <div class="image-box">
+        <img src="assets/asus_2.jpg" alt="Tampak Sudut dan Engsel ErgoLift ASUS Vivobook 14">
+      </div>
+    </div>
+    <div class="image-caption">Gambar 1.5: Tampak depan dan engsel ErgoLift ASUS Vivobook 14 A1404VA.</div>
+
+    <table class="spec-table">
+      <tr>
+        <th>Harga Pasar</th>
+        <td>Rp 8.799.000 (Garansi Resmi 2 Tahun ASUS Global)</td>
+      </tr>
+      <tr>
+        <th>Prosesor (CPU)</th>
+        <td>Intel Core i5-1335U Generasi ke-13 (10 Core: 2 P-core up to 4.6 GHz + 8 E-core up to 3.4 GHz, 12 Thread)</td>
+      </tr>
+      <tr>
+        <th>Daya & Cache CPU</th>
+        <td>TDP Base 15W, Max Turbo 55W | Cache L1: 960 KB, L2: 12 MB, L3: 12 MB Intel Smart Cache</td>
+      </tr>
+      <tr>
+        <th>Memori (RAM)</th>
+        <td>16 GB DDR4 3200 MHz (Konfigurasi: 8GB Onboard + 1 Slot SODIMM 8GB, Upgradeable hingga 24GB)</td>
+      </tr>
+      <tr>
+        <th>Penyimpanan</th>
+        <td>512 GB SSD M.2 2280 NVMe PCIe 4.0 x4 (Tersedia 1 slot M.2 NVMe)</td>
+      </tr>
+      <tr>
+        <th>Kartu Grafis (GPU)</th>
+        <td>Intel Iris Xe Graphics (80 Execution Units, Shared VRAM)</td>
+      </tr>
+      <tr>
+        <th>Layar & Visual</th>
+        <td>14.0 inci IPS-Level, Resolusi Full HD (1920 x 1080), 16:9, Anti-Glare, 250 nits, 45% NTSC</td>
+      </tr>
+      <tr>
+        <th>Port & Konektivitas</th>
+        <td>1x USB 3.2 Gen 1 Type-C (Data Only), 2x USB 3.2 Gen 1 Type-A, 1x USB 2.0, 1x HDMI 1.4, 1x Audio Jack</td>
+      </tr>
+      <tr>
+        <th>Jaringan Nirkabel</th>
+        <td>Wi-Fi 6E (802.11ax 2.4/5/6 GHz) + Bluetooth 5.3</td>
+      </tr>
+      <tr>
+        <th>Baterai & Pengisian</th>
+        <td>42 Whr Lithium-Ion 3-cell, Adaptor 45W / 65W (Fast Charging 60% dalam 49 menit)</td>
+      </tr>
+      <tr>
+        <th>Konstruksi & Bobot</th>
+        <td>Bodi polikarbonat berstandar militer MIL-STD-810H | Lapisan Antimicrobial Guard | Berat: 1,38 kg</td>
+      </tr>
+      <tr>
+        <th>Sistem Operasi</th>
+        <td>Windows 11 Home 64-bit Original + Microsoft Office Home & Student 2021 Asli Permanen</td>
+      </tr>
+    </table>
+
+    <div class="section-subtitle">Catatan Analisis Teknis:</div>
+    <ul class="spec-notes">
+      <li><strong>Keunggulan:</strong> Engsel ErgoLift 180° mempermudah pembacaan layar kelompok; masih tersedia 1 slot SODIMM untuk upgrade memori; lapisan anti-bakteri pada bodi; garansi resmi 2 tahun berlaku global.</li>
+      <li><strong>Keterbatasan:</strong> Port USB-C tidak mendukung pengisian daya maupun output monitor (Data Only); kapasitas baterai paling kecil (42 Whr); memori masih menggunakan standar DDR4.</li>
+      <li><strong>Benchmark Cinebench R23:</strong> Multi-Core: 7.940 poin | Single-Core: 1.645 poin.</li>
+    </ul>
+
+    <div class="page-num">Dokumen Laporan Teknis KTI — Halaman 6</div>
+  </div>
+
+</body>
+</html>
