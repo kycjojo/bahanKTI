@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>UTS KTI — Presentasi & Script Reviu 5 Laptop Under 10 Juta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      line-height: 1.5;
+      font-size: 10pt;
+    }
+
+    .page {
+      background: #ffffff;
+      width: 100%;
+      min-height: 270mm;
+      max-height: 273mm;
+      padding: 10px;
+      margin-bottom: 20px;
+      page-break-after: always;
+      break-after: page;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* TOP HEADER ON EACH PAGE */
+    .top-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+      font-size: 8pt;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .top-meta .badge {
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* HERO BANNER (PAGE 1) */
+    .cover-header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #0284c7 100%);
+      color: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 14px;
+    }
+
+    .cover-header h1 {
+      font-size: 16pt;
+      font-weight: 800;
+      margin-bottom: 6px;
+      line-height: 1.25;
+    }
+
+    .cover-header p {
+      font-size: 9pt;
+      color: #cbd5e1;
+    }
+
+    /* IMAGE CONTAINER (CENTERED, CLEAN) */
+    .slide-media {
+      width: 100%;
+      height: 215px;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .slide-media img {
+      max-width: 100%;
+      max-height: 195px;
+      object-fit: contain;
+    }
+
+    .badge-champion {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #f59e0b;
+      color: #ffffff;
+      font-size: 8pt;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+
+    /* SPECIFICATION MINI-GRID */
+    .spec-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 8px 12px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      font-size: 8pt;
+    }
+
+    .spec-item strong {
+      display: block;
+      color: #64748b;
+      font-size: 7pt;
+      text-transform: uppercase;
+    }
+
+    .spec-item span {
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    /* SCRIPT BOX (BELOW THE IMAGE) */
+    .script-box {
+      background: #ffffff;
+      border: 1.5px solid #3b82f6;
+      border-radius: 10px;
+      padding: 12px 14px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .script-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 1px dashed #cbd5e1;
+    }
+
+    .script-header h3 {
+      font-size: 9.5pt;
+      color: #1d4ed8;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .script-header .time-tag {
+      background: #dbeafe;
+      color: #1e40af;
+      font-size: 7.5pt;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .script-body {
+      font-size: 8.5pt;
+      color: #1e293b;
+      line-height: 1.45;
+      text-align: justify;
+    }
+
+    .script-body p {
+      margin-bottom: 6px;
+    }
+
+    .script-body em.cue {
+      display: block;
+      background: #fef3c7;
+      color: #92400e;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 7.5pt;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+      border-left: 3px solid #f59e0b;
+    }
+
+    /* FOOTER ON EACH PAGE */
+    .page-footer {
+      margin-top: auto;
+      padding-top: 6px;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.5pt;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HALAMAN 1: COVER & HOOK ==================== -->
+  <div class="page">
+    <div class="top-meta">
+      <span>UJIAN TENGAH SEMESTER — KONSEP TEKNOLOGI INFORMASI</span>
+      <span class="badge">HALAMAN 1 / 8</span>
+    </div>
+
+    <div class="cover-header">
+      <div style="font-size: 8pt; text-transform: uppercase; letter-spacing: 1px; color: #38bdf8; font-weight: 700; margin-bottom: 4px;">Politeknik Elektronika Negeri Surabaya (PENS)</div>
+      <h1>Reviu & Komparasi 5 Laptop Under 10 Juta</h1>
+      <p>Analisis 15 Spesifikasi Teknis, Uji Hierarki Cache, Arsitektur CPU, Fleksibilitas RAM/SSD, hingga Kalkulasi TCO 3 Tahun.</p>
+    </div>
+
+    <div class="slide-media">
+      <img src="assets/lenovo.png" alt="Showcase 5 Laptop">
+      <span class="badge-champion">5 Laptop Diadu Head-to-Head</span>
+    </div>
+
+    <div class="spec-strip">
+      <div class="spec-item"><strong>Presenter</strong><span>Rochmad Djojo Oktabianto</span></div>
+      <div class="spec-item"><strong>NRP / Kelas</strong><span>3126600126 / D4 IT A-B</span></div>
+      <div class="spec-item"><strong>Dosen Pengampu</strong><span>Dr. Iwan Syarif, S.Kom., M.Kom.</span></div>
+      <div class="spec-item"><strong>Batas Waktu Video</strong><span>Maksimal 15 Menit</span></div>
+    </div>
+
+    <div class="script-box">
+      <div class="script-header">
+        <h3>🎙️ Naskah Presentasi (Script Video)</h3>
+        <span class="time-tag">Menit 00:00 – 01:30</span>
+      </div>
+      <div class="script-body">
+        <em class="cue">[PANDUAN VISUAL: Wajah terlihat jelas sejajar webcam, ekspresi percaya diri, slide judul di layar]</em>
+        <p><strong>"Banyak orang mengira, kalau punya budget 8 jutaan besar dan ingin laptop kencang, cukup lihat nama prosesornya saja. Tapi benarkah demikian?</strong></p>
+        <p>Bagaimana jika ada dua laptop dengan prosesor yang sama, skor Cinebench-nya sama-sama tembus 10.000 poin, tapi saat dibongkar bodi dalamnya... yang satu RAM-nya bisa di-upgrade ke 64GB dan punya 2 slot SSD, sementara yang satu lagi RAM-nya disolder mati seumur hidup dan port USB-C nya cuma pajangan data?</p>
+        <p>Assalamualaikum Warahmatullahi Wabarakatuh. Selamat pagi kepada Bapak Iwan Syarif dan rekan-rekan sekalian. Saya <strong>Rochmad Djojo Oktabianto</strong>, mahasiswa D4 Teknik Informatika PENS. Pada video reviu UTS ini, saya mengadu 5 model laptop spesifik di rentang harga setara (Rp 8–9 jutaan): <strong>Axioo Hype 5 AMD X6</strong>, <strong>Advan WorkPlus</strong>, <strong>Lenovo IdeaPad Slim 3 14IAH8</strong>, <strong>Acer Aspire 5 Slim</strong>, dan <strong>ASUS Vivobook 14</strong>. Mari kita buktikan brand mana yang paling royal memberikan keuntungan ekstra bagi mahasiswa informatika!"</p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Mata Kuliah: Konsep Teknologi Informasi • D4 Teknik Informatika PENS</span>
+      <span>Repo: github.com/kycjojo/bahanKTI</span>
+    </div>
+  </div>
+
+  <!-- ==================== HALAMAN 2: LENOVO (WINNER) ==================== -->
+  <div class="page">
+    <div class="top-meta">
+      <span>KANDIDAT 1: LENOVO IDEAPAD SLIM 3 14IAH8</span>
+      <span class="badge">HALAMAN 2 / 8</span>
+    </div>
+
+    <div class="slide-media">
+      <img src="assets/lenovo.png" alt="Lenovo IdeaPad Slim 3 14IAH8">
+      <span class="badge-champion">🥇 Pemenang Rekomendasi Utama</span>
+    </div>
+
+    <div class="spec-strip">
+      <div class="spec-item"><strong>Model & Harga</strong><span>83EQ004DID (Rp 8.599.000)</span></div>
+      <div class="spec-item"><strong>CPU & TDP</strong><span>Core i5-12450H (8C/12T, 45W)</span></div>
+      <div class="spec-item"><strong>RAM & Storage</strong><span>16GB LPDDR5 | 512GB NVMe</span></div>
+      <div class="spec-item"><strong>Ketahanan & Bonus</strong><span>MIL-STD-810H | Win 11 + OHS Asli</span></div>
+    </div>
+
+    <div class="script-box">
+      <div class="script-header">
+        <h3>🎙️ Naskah Presentasi: Analisis Lenovo IdeaPad Slim 3 14</h3>
+        <span class="time-tag">Menit 01:31 – 04:00</span>
+      </div>
+      <div class="script-body">
+        <em class="cue">[PANDUAN VISUAL: Tunjukkan foto Lenovo, perlihatkan sertifikasi militer dan keyboard AccuType]</em>
+        <p><strong>"Kita mulai dari kandidat pertama sekaligus pemenang utama: Lenovo IdeaPad Slim 3 14IAH8.</strong></p>
+        <p>Di kelas harga Rp 8,5 juta, Lenovo menyematkan prosesor kelas performa tinggi <strong>Intel Core i5-12450H</strong> arsitektur Alder Lake 45 Watt dengan 8 Core (4 Performance-core dan 4 Efficient-core). Pada pengujian <strong>Cinebench R23 Multi-Core</strong>, laptop ini sanggup mencatatkan skor <strong>~9.250 poin</strong>, sangat tangguh untuk menjalankan kompilasi program, multitasking berat, dan container Docker tanpa hambatan.</p>
+        <p>Namun kekuatan terbesar Lenovo bukan cuma di prosesor, melainkan <strong>durabilitas dan kenyamanan harian</strong>. Bodi laptop ini telah lolos <strong>uji ketahanan standar militer MIL-STD-810H</strong>, menjamin keawetan engsel dan sasis saat dibawa mobile di kampus. Papan ketiknya mengusung desain kurvatur <em>AccuType</em> khas Lenovo yang dinobatkan sebagai keyboard paling empuk dan minim typo untuk coding berjam-jam. Ditambah lagi, Lenovo sudah menyertakan <strong>lisensi Microsoft Office Home & Student asli permanen</strong> seumur hidup, slot SD Card ukuran penuh, dan webcam privacy shutter fisik."</p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Mata Kuliah: Konsep Teknologi Informasi • D4 Teknik Informatika PENS</span>
+      <span>Repo: github.com/kycjojo/bahanKTI</span>
+    </div>
+  </div>
+
+  <!-- ==================== HALAMAN 3: AXIOO HYPE 5 ==================== -->
+  <div class="page">
+    <div class="top-meta">
+      <span>KANDIDAT 2: AXIOO HYPE 5 AMD X6</span>
+      <span class="badge">HALAMAN 3 / 8</span>
+    </div>
+
+    <div class="slide-media">
+      <img src="assets/axioo.jpg" alt="Axioo Hype 5 AMD X6">
+      <span class="badge-champion" style="background:#2563eb;">🏆 Juara Upgradability</span>
+    </div>
+
+    <div class="spec-strip">
+      <div class="spec-item"><strong>Model & Harga</strong><span>H5A-6600 (Rp 8.499.000)</span></div>
+      <div class="spec-item"><strong>CPU & Cache</strong><span>Ryzen 5 6600H | L3: 16 MB</span></div>
+      <div class="spec-item"><strong>RAM Modular</strong><span>2 Slot SODIMM DDR5 (ke 64GB)</span></div>
+      <div class="spec-item"><strong>Penyimpanan</strong><span>2 Slot M.2 NVMe PCIe</span></div>
+    </div>
+
+    <div class="script-box">
+      <div class="script-header">
+        <h3>🎙️ Naskah Presentasi: Analisis Axioo Hype 5 AMD X6</h3>
+        <span class="time-tag">Menit 04:01 – 06:00</span>
+      </div>
+      <div class="script-body">
+        <em class="cue">[PANDUAN VISUAL: Tunjukkan diagram 2 slot SODIMM dan 2 slot SSD M.2]</em>
+        <p><strong>"Kandidat kedua adalah sang anomali positif: Axioo Hype 5 AMD X6.</strong></p>
+        <p>Ditenagai prosesor <strong>AMD Ryzen 5 6600H</strong> arsitektur Zen 3+ 6-Core 12-Thread 45 Watt dan grafis Radeon 660M RDNA 2, laptop ini mencatatkan skor Cinebench R23 multi-core sebesar <strong>~9.820 poin</strong>. Prosesor ini memiliki <strong>Cache L3 monolitik sebesar 16 Megabyte</strong> yang sangat efektif memangkas <em>Von Neumann bottleneck</em> saat kompilasi data masif.</p>
+        <p>Tetapi sorotan paling istimewa dari Axioo adalah <strong>kemudahan upgrade-nya</strong>. Di saat hampir semua laptop tipis modern menyolder RAM-nya ke motherboard, Axioo menyediakan <strong>2 Slot SODIMM DDR5</strong> yang bisa dilepas-pasang dan di-upgrade hingga <strong>64 Gigabyte</strong>! Tidak hanya itu, Axioo juga memiliki <strong>2 Slot SSD M.2 NVMe</strong> serta layar dengan rasio <strong>16:10 WUXGA (1920x1200)</strong> yang memberi ruang vertikal lebih luas untuk membaca dokumen dan koding. Komprominya adalah bodi plastik polikarbonat standar dan belum termasuk paket Microsoft Office permanen."</p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Mata Kuliah: Konsep Teknologi Informasi • D4 Teknik Informatika PENS</span>
+      <span>Repo: github.com/kycjojo/bahanKTI</span>
+    </div>
+  </div>
+
+  <!-- ==================== HALAMAN 4: ADVAN WORKPLUS ==================== -->
+  <div class="page">
+    <div class="top-meta">
+      <span>KANDIDAT 3: ADVAN WORKPLUS</span>
+      <span class="badge">HALAMAN 4 / 8</span>
+    </div>
+
+    <div class="slide-media">
+      <img src="assets/advan.png" alt="Advan WorkPlus">
+      <span class="badge-champion" style="background:#059669;">🏆 Juara Raw Performance</span>
+    </div>
+
+    <div class="spec-strip">
+      <div class="spec-item"><strong>Model & Harga</strong><span>14-FHD+ / 6600H (Rp 7.999.000)</span></div>
+      <div class="spec-item"><strong>CPU & Benchmark</strong><span>Ryzen 5 6600H | CB: ~10.150 pts</span></div>
+      <div class="spec-item"><strong>RAM & Storage</strong><span>16GB LPDDR5 6400MHz | 2x M.2</span></div>
+      <div class="spec-item"><strong>Bodi & Charger</strong><span>Full Metal (~1.33 kg) | 100W GaN</span></div>
+    </div>
+
+    <div class="script-box">
+      <div class="script-header">
+        <h3>🎙️ Naskah Presentasi: Analisis Advan WorkPlus</h3>
+        <span class="time-tag">Menit 06:01 – 08:00</span>
+      </div>
+      <div class="script-body">
+        <em class="cue">[PANDUAN VISUAL: Tunjukkan bodi full aluminium Advan dan charger GaN 100W]</em>
+        <p><strong>"Kandidat ketiga adalah Advan WorkPlus, raja spesifikasi mentah terhadap harga.</strong></p>
+        <p>Dengan harga paling terjangkau di daftar ini, yaitu <strong>Rp 7.999.000</strong>, Advan memberikan bodi berbahan <strong>Full Metal Aluminium</strong> yang sangat tipis dan berbobot ringan hanya 1,33 kg. Laptop ini dibekali AMD Ryzen 5 6600H yang dipadukan dengan RAM LPDDR5 berkecepatan <strong>6.400 MHz</strong>, menghasilkan skor Cinebench R23 tertinggi di kelasnya: <strong>10.150 poin</strong>!</p>
+        <p>Kelebihan lainnya: Advan menyertakan <strong>2 slot SSD M.2</strong>, adaptor charger <strong>Type-C 100W GaN</strong> berukuran saku, dan kedua port USB-C nya sudah <em>Full Function</em> yang mendukung pengisian daya dan output monitor eksternal. Namun komprominya: RAM-nya tersolder mati (tidak bisa ditambah), belum memiliki paket Office resmi, dan jaringan purna jualnya belum sebesar merek global ternama."</p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Mata Kuliah: Konsep Teknologi Informasi • D4 Teknik Informatika PENS</span>
+      <span>Repo: github.com/kycjojo/bahanKTI</span>
+    </div>
+  </div>
+
+  <!-- ==================== HALAMAN 5: ACER ASPIRE 5 SLIM ==================== -->
+  <div class="page">
+    <div class="top-meta">
+      <span>KANDIDAT 4: ACER ASPIRE 5 SLIM</span>
+      <span class="badge">HALAMAN 5 / 8</span>
+    </div>
+
+    <div class="slide-media">
+      <img src="assets/acer.jpg" alt="Acer Aspire 5 Slim">
+      <span class="badge-champion" style="background:#7c3aed;">🏆 Juara Port & Baterai</span>
+    </div>
+
+    <div class="spec-strip">
+      <div class="spec-item"><strong>Model & Harga</strong><span>A514-56M-534E (Rp 8.699.000)</span></div>
+      <div class="spec-item"><strong>CPU & Daya</strong><span>Core i5-1335U (10C/12T, 15W)</span></div>
+      <div class="spec-item"><strong>Port Ekstrem</strong><span>Thunderbolt 4 / USB4 (40 Gbps)</span></div>
+      <div class="spec-item"><strong>Baterai Nyata</strong><span>50 Whr (~8,5 Jam Penggunaan)</span></div>
+    </div>
+
+    <div class="script-box">
+      <div class="script-header">
+        <h3>🎙️ Naskah Presentasi: Analisis Acer Aspire 5 Slim</h3>
+        <span class="time-tag">Menit 08:01 – 10:00</span>
+      </div>
+      <div class="script-body">
+        <em class="cue">[PANDUAN VISUAL: Tunjukkan logo petir Thunderbolt 4 dan grafik efisiensi baterai 8,5 jam]</em>
+        <p><strong>"Kandidat keempat adalah Acer Aspire 5 Slim A514-56M.</strong></p>
+        <p>Jika laptop-laptop sebelumnya mengorbankan baterai demi performa prosesor seri H, Acer mengambil pendekatan berbeda dengan mengadopsi <strong>Intel Core i5-1335U Generasi ke-13</strong>. Meski skor Cinebench multi-core-nya berada di angka ~8.120 poin, prosesor seri U 15 Watt ini memberikan efisiensi daya luar biasa: baterainya sanggup bertahan <strong>hingga 8,5 jam pemakaian riil</strong>, paling awet di antara kelimanya.</p>
+        <p>Selain itu, Acer adalah satu-satunya laptop di bawah 9 juta yang memiliki port <strong>Thunderbolt 4 berkecepatan 40 Gbps</strong>. Port ini mendukung transfer data super cepat, display out resolusi 4K/8K, hingga koneksi ke external GPU. Bodi atasnya berbahan cover metal aluminium, dilengkapi modul <strong>Wi-Fi 6E (pita 6 GHz)</strong>, pendingin TwinAir, serta bundling Windows 11 + Office Home & Student asli."</p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Mata Kuliah: Konsep Teknologi Informasi • D4 Teknik Informatika PENS</span>
+      <span>Repo: github.com/kycjojo/bahanKTI</span>
+    </div>
+  </div>
+
+  <!-- ==================== HALAMAN 6: ASUS VIVOBOOK 14 ==================== -->
+  <div class="page">
+    <div class="top-meta">
+      <span>KANDIDAT 5: ASUS VIVOBOOK 14</span>
+      <span class="badge">HALAMAN 6 / 8</span>
+    </div>
+
+    <div class="slide-media">
+      <img src="assets/asus.jpg" alt="ASUS Vivobook 14">
+      <span class="badge-champion" style="background:#0284c7;">Modern Lifestyle & Ergonomi</span>
+    </div>
+
+    <div class="spec-strip">
+      <div class="spec-item"><strong>Model & Harga</strong><span>A1404VA-VIPS551 (Rp 8.799.000)</span></div>
+      <div class="spec-item"><strong>CPU & Pendingin</strong><span>Core i5-1335U | IceBlades Fan</span></div>
+      <div class="spec-item"><strong>RAM Ekspansi</strong><span>8GB Onboard + 1 Slot SODIMM</span></div>
+      <div class="spec-item"><strong>Fitur Khusus</strong><span>ErgoLift 180° | Antimicrobial</span></div>
+    </div>
+
+    <div class="script-box">
+      <div class="script-header">
+        <h3>🎙️ Naskah Presentasi: Analisis ASUS Vivobook 14</h3>
+        <span class="time-tag">Menit 10:01 – 11:30</span>
+      </div>
+      <div class="script-body">
+        <em class="cue">[PANDUAN VISUAL: Tunjukkan mekanisme engsel ErgoLift 180° dan webcam privacy shutter]</em>
+        <p><strong>"Kandidat kelima adalah ASUS Vivobook 14 A1404VA.</strong></p>
+        <p>Laptop ini dirancang dengan fokus pada kenyamanan ergonomi gaya hidup modern. Mengusung engsel <strong>ErgoLift 180°</strong> yang sedikit mengangkat posisi papan ketik saat laptop dibuka untuk memperlancar sirkulasi udara dan mengurangi ketegangan pergelangan tangan. Permukaan bodi juga dilapisi <em>ASUS Antimicrobial Guard Plus</em> untuk menghambat pertumbuhan bakteri.</p>
+        <p>Kelebihan lainnya: ASUS masih menyisakan <strong>1 slot SODIMM</strong> sehingga RAM masih bisa ditambah. Namun pada kelas harga mendekati Rp 9 juta, ASUS memiliki kompromi cukup signifikan: baterainya paling kecil (42 Whr), memori masih menggunakan DDR4 (bukan DDR5/LPDDR5), dan port USB-C nya hanya berfungsi untuk transfer data (belum mendukung pengisian daya Power Delivery)."</p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Mata Kuliah: Konsep Teknologi Informasi • D4 Teknik Informatika PENS</span>
+      <span>Repo: github.com/kycjojo/bahanKTI</span>
+    </div>
+  </div>
+
+  <!-- ==================== HALAMAN 7: ANALISIS TCO & KOMPARASI ==================== -->
+  <div class="page">
+    <div class="top-meta">
+      <span>BAGIAN F & G: ANALISIS TOTAL COST OF OWNERSHIP (TCO)</span>
+      <span class="badge">HALAMAN 7 / 8</span>
+    </div>
+
+    <div class="slide-media" style="height: 190px;">
+      <img src="assets/lenovo.png" alt="Analisis Finansial TCO">
+      <span class="badge-champion" style="background:#059669;">Kalkulasi Finansial 3 Tahun</span>
+    </div>
+
+    <div class="spec-strip" style="grid-template-columns: repeat(5, 1fr);">
+      <div class="spec-item"><strong>Axioo Hype 5</strong><span>TCO: Rp 8.550.000</span></div>
+      <div class="spec-item"><strong>Advan WorkPlus</strong><span>TCO: Rp 8.050.000</span></div>
+      <div class="spec-item"><strong>Lenovo Slim 3</strong><span style="color:#16a34a;">🏆 Rp 6.650.000</span></div>
+      <div class="spec-item"><strong>Acer Aspire 5</strong><span>TCO: Rp 6.950.000</span></div>
+      <div class="spec-item"><strong>ASUS Vivobook</strong><span>TCO: Rp 6.950.000</span></div>
+    </div>
+
+    <div class="script-box">
+      <div class="script-header">
+        <h3>🎙️ Naskah Presentasi: Membedah Mitos 'Laptop Termurah' via TCO</h3>
+        <span class="time-tag">Menit 11:31 – 13:15</span>
+      </div>
+      <div class="script-body">
+        <em class="cue">[PANDUAN VISUAL: Tunjukkan rumus TCO dan tabel perbandingan biaya riil 3 tahun]</em>
+        <p><strong>"Sekarang kita masuk ke analisis finansial teknik yang sangat esensial: Total Cost of Ownership (TCO).</strong></p>
+        <p>Konsumen sering terjebak mengira bahwa laptop dengan harga beli termurah adalah laptop paling hemat. Mari kita buktikan secara matematis dengan rumus:  
+        <em>TCO = Harga Beli + Biaya Upgrade + Biaya Lisensi Software Tambahan - Nilai Jual Kembali (Resale 30%)</em>.</p>
+        <p><strong>Advan WorkPlus</strong> dijual seharga Rp 7.999.000 (termurah). Namun karena belum menyertakan Microsoft Office resmi, pengguna wajib membeli lisensi OHS terpisah seharga Rp 1,4 juta dan menambah SSD 1TB seharga Rp 850 ribu. Setelah dipotong resale value, TCO 3 tahunnya menjadi <strong>Rp 8.050.000</strong>.</p>
+        <p>Sebaliknya, <strong>Lenovo IdeaPad Slim 3</strong> dibeli seharga Rp 8.599.000. Laptop ini <strong>SUDAH MENYERTAKAN Office Home & Student asli permanen</strong> seumur hidup (hemat Rp 1,4 juta sejak hari pertama), sasis berstandar militer minim biaya servis, dan nilai depresiasi brand Lenovo sangat stabil. Hasilnya: <strong>TCO Lenovo hanya Rp 6.650.000 (Paling Hemat di antara kelimanya!)</strong>."</p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Mata Kuliah: Konsep Teknologi Informasi • D4 Teknik Informatika PENS</span>
+      <span>Repo: github.com/kycjojo/bahanKTI</span>
+    </div>
+  </div>
+
+  <!-- ==================== HALAMAN 8: REKOMENDASI AKHIR & PENUTUP ==================== -->
+  <div class="page">
+    <div class="top-meta">
+      <span>BAGIAN H: PENGAMBILAN KEPUTUSAN & KESIMPULAN AKHIR</span>
+      <span class="badge">HALAMAN 8 / 8</span>
+    </div>
+
+    <div class="slide-media" style="height: 190px;">
+      <img src="assets/lenovo.png" alt="Pemenang Akhir Lenovo">
+      <span class="badge-champion">🏆 BEST OVERALL LAPTOP UNDER 10 JUTA</span>
+    </div>
+
+    <div class="spec-strip">
+      <div class="spec-item"><strong>Juara 1 Terpilih</strong><span>Lenovo IdeaPad Slim 3 14</span></div>
+      <div class="spec-item"><strong>Nomor Model</strong><span>83EQ004DID (Rp 8.599.000)</span></div>
+      <div class="spec-item"><strong>Kelayakan Pakai</strong><span>Sangat Layak 5 Tahun (2026-2031)</span></div>
+      <div class="spec-item"><strong>Target Pengguna</strong><span>Mahasiswa IT & Software Engineer</span></div>
+    </div>
+
+    <div class="script-box">
+      <div class="script-header">
+        <h3>🎙️ Naskah Presentasi: Keputusan Akhir & Salam Penutup</h3>
+        <span class="time-tag">Menit 13:16 – 15:00</span>
+      </div>
+      <div class="script-body">
+        <em class="cue">[PANDUAN VISUAL: Wajah presenter kembali ke layar penuh, tampilkan link repositori tugas]</em>
+        <p><strong>"Berdasarkan seluruh analisis teknis, pengujian benchmark, dan kalkulasi TCO, keputusan akhir saya menetapkan:</strong></p>
+        <p>🏆 <strong>LENOVO IDEAPAD SLIM 3 14IAH8 (Model: 83EQ004DID)</strong> sebagai laptop terbaik di bawah 10 juta dengan 5 alasan teknis utama: keseimbangan CPU seri H 45 Watt yang kencang, keyboard AccuType paling ergonomis di industri, bodi tangguh bersertifikasi militer MIL-STD-810H, nilai TCO 3 tahun paling rendah dengan bundling Office asli permanen, serta jaringan purna jual paling merata.</p>
+        <p>Tiga komprominya adalah RAM yang tersolder mati, hanya 1 slot SSD, dan akurasi warna layar 45% NTSC standar. Laptop ini sangat ideal bagi mahasiswa IT dan programmer, namun kurang sesuai untuk desainer visual yang butuh layar 100% DCI-P3.</p>
+        <p>Seluruh dokumen presentasi, naskah script, dan laporan teknis ini telah saya unggah ke GitHub di <strong>github.com/kycjojo/bahanKTI</strong>. Terima kasih banyak atas bimbingan Bapak Iwan Syarif. Wassalamualaikum Warahmatullahi Wabarakatuh."</p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Mata Kuliah: Konsep Teknologi Informasi • D4 Teknik Informatika PENS</span>
+      <span>Repo: github.com/kycjojo/bahanKTI</span>
+    </div>
+  </div>
+
+</body>
+</html>
