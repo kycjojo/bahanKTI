@@ -2,7 +2,8 @@
 **Program Studi D4 Teknik Informatika — Politeknik Elektronika Negeri Surabaya (PENS)**  
 **Dosen Pengampu:** Iwan Syarif  
 **Topik:** Reviu & Analisis Perbandingan 5 Produk Laptop Komputasi Kinerja Tinggi (Budget Under Rp 10 Juta)  
-**Penyusun:** Mahasiswa Teknik Informatika PENS  
+**Penyusun:** Rochmad Djojo Oktabianto (NRP: 3126600126) — Mahasiswa D4 Teknik Informatika PENS  
+**Link Video Presentasi Reviu (Google Drive):** [Buka Video Reviu di Google Drive](https://drive.google.com/drive/folders/1AlInfs25r0rYZrh1xR6rmwWPJ95exLC5?usp=drive_link)
 
 ---
 
