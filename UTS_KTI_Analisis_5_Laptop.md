@@ -3,7 +3,8 @@
 **Dosen Pengampu:** Iwan Syarif  
 **Topik:** Reviu & Analisis Perbandingan 5 Produk Laptop Komputasi Kinerja Tinggi (Budget Under Rp 10 Juta)  
 **Penyusun:** Rochmad Djojo Oktabianto (NRP: 3126600126) — Mahasiswa D4 Teknik Informatika PENS  
-**Link Video Presentasi Reviu (Google Drive):** [Buka Video Reviu di Google Drive](https://drive.google.com/drive/folders/1AlInfs25r0rYZrh1xR6rmwWPJ95exLC5?usp=drive_link)
+**Link Video Presentasi (YouTube):** [Tonton di YouTube](https://youtu.be/wuKABOQ77x4) (`https://youtu.be/wuKABOQ77x4`)  
+**Link Backup Cloud (Google Drive):** [Buka Folder Google Drive](https://drive.google.com/drive/folders/1AlInfs25r0rYZrh1xR6rmwWPJ95exLC5?usp=drive_link)
 
 ---
 
